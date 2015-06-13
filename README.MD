@@ -11,7 +11,7 @@ A minimal PHP script to easily create password protected areas on a server witho
   It is not recommended to upload `create_hash.php` though. Use it in a local environment instead.
 - Run `create_hash.php` in a web browser to generate a hash for a password.
 - Open `config.php` and paste the generated hash into the `LOGINS` array. Remove the entry for ``user1``.
-- For each user create a folder in the download directory that you defined in `config.php`. **For security reasons it is strongly recommended to use a folder in the non public area of the server (document root).**  If that is not possible just keep the default `files` directory.  
+- For each user create a folder in the download directory that you defined in `config.php`. **For security reasons it is strongly recommended to use a folder in the non public area of the server (document root).**  If that is not possible just keep the default `files` directory.
 
 ## Info
 The script comes with an example user named ``user1`` and the password ``password``. There is also an example file in the folder `files/user1` for the user to download.
@@ -22,5 +22,3 @@ For generating hashes the script uses Password Hashing With PBKDF2 (http://crack
 ## Release History
 
 * 0.1.0 Initial release
-
-## License
