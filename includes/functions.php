@@ -1,9 +1,22 @@
 <?php
+require_once('includes/pw.php');
+
+function createSessionHash($hash){
+  $userBrowser = htmlspecialchars($_SERVER['HTTP_USER_AGENT']);
+  return create_hash($hash.$userBrowser);
+}
+
 function authorized(){
   global $LOGINS;
-  return isset($_SESSION['user']) &&
-         isset($_SESSION['hash']) &&
-         $_SESSION['hash'] == $LOGINS[$_SESSION['user']];
+  if (isset($_SESSION['user'], $_SESSION['loginString'])) {
+    $hash = $LOGINS[$_SESSION['user']];
+    $userBrowser = htmlspecialchars($_SERVER['HTTP_USER_AGENT']);
+    if (validate_password($hash.$userBrowser, $_SESSION['loginString'])){
+      return true;
+    }
+  }
+
+  return false;
 }
 
 //default escape

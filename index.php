@@ -31,9 +31,8 @@ else if (isset($_POST['submit'])) {
     $userFound = FALSE;
     foreach ($LOGINS as $user => $hash) {
         if ($username == $user && validate_password($_POST['password'], $hash)){
-            // echo 'user: '.$user;
             $_SESSION['user'] = $user;
-            $_SESSION['hash'] = $hash;
+            $_SESSION['loginString'] = createSessionHash($hash);
             header('Location: '.$_SERVER['PHP_SELF']);
             die();
         }
