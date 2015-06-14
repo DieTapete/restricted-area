@@ -25,7 +25,7 @@ Discussion on HackerNews: https://news.ycombinator.com/item?id=9713192
 The script comes with an example user named ``user1`` and the password ``password``. There is also an example file in the folder `files/user1` for the user to download.
 
 ## How does it work?
-Basically you generate a hash (`create_hash.php`) for each user and save them in an associative array with the user names as keys. When a user logs in the script iterates through the array and the password is being validated. On validation two session variables are being set containing the username and hash. These variables are used to check if the user is authorized (see `authorized` function in `functions.php`). 
+Basically you generate a hash (`create_hash.php`) for each user and save them in an associative array with the user names as keys. When a user logs in the script iterates through the array and the password is being validated. On validation two session variables are being set containing the username and hash. These variables are used to check if the user is authorized (see `authorized` function in `functions.php`).
 
 When logged in the user is able to see the files of a folder named after the user within the specified download directory. By default the download directory is the folder `files`, which is protected by a `Deny from all` rule in the `.htaccess ` file. It is recommended to use a non public folder instead since the access rule can be circumvented.
 
@@ -37,7 +37,8 @@ The download script `download.php` first checks if the user is authorized. Then 
 - jQuery is loaded from a CDN by default but not used in any way. Kick it out if you don't need it.
 - The Bootstrap Theme in use is Cosmo: https://bootswatch.com/cosmo/
 
-
 ## Release History
 
 * 0.1.0 Initial release
+
+<style>img{border:1px solid gray; padding:10px}</style>
