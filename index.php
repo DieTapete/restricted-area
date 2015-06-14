@@ -1,14 +1,10 @@
 <?php
 session_start();
+session_regenerate_id();
 
 require_once('config.php');
 require_once('includes/pw.php');
 require_once('includes/functions.php');
-
-if (defined('DEBUG')) {
-    error_reporting(E_ALL);
-    ini_set('display_errors', 1);
-}
 
 // ***************************************** //
 // **********   DECLARE VARIABLES  ********** //

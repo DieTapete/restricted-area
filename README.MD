@@ -39,12 +39,11 @@ The download script `download.php` first checks if the user is authorized. Then 
 
 ## ToDo
 - Implement protected against brute force attack.
-- Use `password_hash` and `password_verify` if PHP >=5.5.0 is available.
-- Enforce https
+- Use `password_hash` and `password_verify` if `PHP >=5.5.0` is available.
+- Use password compat for `PHP >=5.3` https://github.com/ircmaxell/password_compat
+- Use SSL option in config.php and enforce `https` if script is called via `http`.
 - Implement 'remember me' check box.
 
 ## Release History
 
 * 0.1.0 Initial release
-
-<style>.markdown-body img{border:1px solid gray; padding:10px}</style>

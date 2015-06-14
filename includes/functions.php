@@ -21,4 +21,9 @@ function humanReadableFileSize($size,$unit="") {
   return number_format($size)." bytes";
 }
 
+if (defined('DEBUG')) {
+    error_reporting(E_ALL);
+    ini_set('display_errors', 1);
+}
+
 ?>
