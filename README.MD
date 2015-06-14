@@ -37,6 +37,12 @@ The download script `download.php` first checks if the user is authorized. Then 
 - jQuery is loaded from a CDN by default but not used in any way. Kick it out if you don't need it.
 - The Bootstrap Theme in use is Cosmo: https://bootswatch.com/cosmo/
 
+## ToDo
+- Implement protected against brute force attack.
+- Use `password_hash` and `password_verify` if PHP >=5.5.0 is available.
+- Enforce https
+- Implement 'remember me' check box.
+
 ## Release History
 
 * 0.1.0 Initial release
