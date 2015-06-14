@@ -4,6 +4,8 @@ A minimal PHP script to easily create password protected areas on a server witho
 
 **Warning: I am not a professional PHP programmer and there are probably still a lot of security flaws in this code. The script should not be used in it's current state. Contributions are very welcome.**
 
+There's currently a discussion on HackerNews: https://news.ycombinator.com/item?id=9713192
+
 ## Usage
 - Open `config.php` and remove the line `define('DEBUG', TRUE);`.<br>
   Also edit the other variables as needed.
