@@ -14,7 +14,7 @@ if (authorized()) {
 
   if (isset($_GET['file']))
   {
-    $file = str_replace('%20', ' ', $_GET['file']);
+    $file = urldecode($_GET['file']);
     if (strpos($file, '../') != FALSE || strpos($file, '/') === 0){
       //Malicious input, fail silently
       die();
