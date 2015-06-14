@@ -38,7 +38,8 @@ The download script `download.php` first checks if the user is authorized. Then 
 - The Bootstrap Theme in use is Cosmo: https://bootswatch.com/cosmo/
 
 ## ToDo
-- Implement protected against brute force attack.
+- Implement security methods from this article: https://www.owasp.org/index.php/PHP_Security_Cheat_Sheet
+- Implement protection against brute force attack.
 - Use `password_hash` and `password_verify` if `PHP >=5.5.0` is available.
 - Use password compat for `PHP >=5.3` https://github.com/ircmaxell/password_compat
 - Use SSL option in config.php and enforce `https` if script is called via `http`.

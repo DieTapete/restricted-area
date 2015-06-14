@@ -1,10 +1,9 @@
 <?php
-session_start();
-session_regenerate_id();
-
 require_once('config.php');
 require_once('includes/pw.php');
 require_once('includes/functions.php');
+
+secureSessionStart();
 
 // ***************************************** //
 // **********   DECLARE VARIABLES  ********** //

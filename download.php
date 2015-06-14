@@ -2,7 +2,8 @@
 require_once('config.php');
 require_once('includes/functions.php');
 
-session_start();
+secureSessionStart();
+
 if (authorized()) {
   $currentUser = strip_tags($_SESSION['user']);
   //build path to download files

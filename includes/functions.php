@@ -21,6 +21,27 @@ function humanReadableFileSize($size,$unit="") {
   return number_format($size)." bytes";
 }
 
+function secureSessionStart() {
+    $sessionName = SESSION_NAME;
+    // Prevent javaScript from accessing cookies
+    $httponly = true;
+    // force using cookies
+    if (ini_set('session.use_only_cookies', 1) === FALSE) {
+        die("Error: Could not initiate a safe session. Please enable cookies.");
+    }
+    ini_set('session.use_trans_sid', 0);
+    $cookieParams = session_get_cookie_params();
+    session_set_cookie_params($cookieParams["lifetime"],
+        $cookieParams["path"],
+        $cookieParams["domain"],
+        USE_SSL,
+        $httponly);
+
+    session_name($sessionName);
+    session_start();
+    session_regenerate_id();
+}
+
 if (defined('DEBUG')) {
     error_reporting(E_ALL);
     ini_set('display_errors', 1);
