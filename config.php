@@ -8,7 +8,7 @@ define('DOWNLOAD_DIRECTORY', './files/');
 
 //As of now
 define('USE_SSL', FALSE);
-define('SESSION_NAME, 'restricted_area_session');
+define('SESSION_NAME', 'restricted_area_session');
 
 $LOGINS = array(
   //create new hashes with create_hash.php and paste the hash in here
