@@ -41,4 +41,4 @@ The download script `download.php` first checks if the user is authorized. Then 
 
 * 0.1.0 Initial release
 
-<style>img{border:1px solid gray; padding:10px}</style>
+<style>.markdown-body img{border:1px solid gray; padding:10px}</style>
