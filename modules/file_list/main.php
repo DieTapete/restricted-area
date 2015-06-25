@@ -1,3 +1,4 @@
+<br> <!-- I know, bad style.. But anyways. -->
 <?php
 //List files (no hidden files) in the download directory for the current user
 $directory = DOWNLOAD_DIRECTORY.$currentUser.'/';

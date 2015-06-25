@@ -46,6 +46,7 @@ The download script `download.php` first checks if the user is authorized. Then 
 - Use password compat for `PHP >=5.3` https://github.com/ircmaxell/password_compat
 - Use SSL option in config.php and enforce `https` if script is called via `http`.
 - Implement 'remember me' check box.
+- Implement gallery module.
 
 ## Release History
 
