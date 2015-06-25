@@ -12,20 +12,21 @@ Discussion on HackerNews: https://news.ycombinator.com/item?id=9713192
 ![Login Screen](https://dl.dropboxusercontent.com/u/2409265/ra/screenshot_download.jpeg "Login Screen")
 
 ## Usage
-- Open `config.php` and remove the line `define('DEBUG', TRUE);`.  
+- Open `config.php` and remove the line `define('DEBUG', TRUE);`.
   Also edit the other variables like `TITLE` as needed.
-- Upload all the files to a directory on your server.  
+- Upload all the files to a directory on your server.
   <small>Hint: It's not recommended to upload `create_hash.php` though. Use it in a local environment instead.</small>
 - Run `create_hash.php` in a web browser to generate a hash for a password.
 - Open `config.php` and paste the generated hash into the `LOGINS` array. Remove the entry for ``user1``.
-- For each user create a folder in the download directory that you defined in `config.php`.  
+- For each user create a folder in the download directory that you defined in `config.php`.
 <small>**For security reasons it is strongly recommended to use a folder in the non public area of the server (document root). If that is not possible just keep the default `files` directory or copy the `.htaccess` file from it to your alternative download folder.**</small>
 
 ## Info
 The script comes with an example user named ``user1`` and the password ``password``. There is also an example file in the folder `files/user1` for the user to download.
 
 ## How does it work?
-Basically you generate a hash (`create_hash.php`) for each user and save them in an associative array with the user names as keys. When a user logs in the script iterates through the array and the password is being validated. On validation two session variables are being set containing the username and hash. These variables are used to check if the user is authorized (see `authorized` function in `functions.php`).
+Basically you generate a hash (`create_hash.php`) for each user and save them in an associative array with the user names as keys. When a user logs in the script iterates through the array and the password is being validated. On validation two session variables are being set containing the username and the hash combined with the user agent string. These variables are used to check if the user is authorized (see `authorized` function in `functions.php`).
+The hashing algorithm is implemented in `includes/pw.php` and uses PBKDF2 (`hash_pbkdf2` is used only if it exists) and SHA256 with 30000 iterations.
 
 When logged in the user is able to see the files of a folder named after the user within the specified download directory. By default the download directory is the folder `files`, which is protected by a `Deny from all` rule in the `.htaccess ` file. It is recommended to use a non public folder instead since the access rule can be circumvented.
 
@@ -39,6 +40,7 @@ The download script `download.php` first checks if the user is authorized. Then 
 
 ## ToDo
 - Implement security methods from this article: https://www.owasp.org/index.php/PHP_Security_Cheat_Sheet
+- Hash password also in the client: https://crackstation.net/hashing-security.htm
 - Implement protection against brute force attack.
 - Use `password_hash` and `password_verify` if `PHP >=5.5.0` is available.
 - Use password compat for `PHP >=5.3` https://github.com/ircmaxell/password_compat
