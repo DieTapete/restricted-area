@@ -10,6 +10,9 @@ define('DOWNLOAD_DIRECTORY', './files/');
 define('USE_SSL', FALSE);
 define('SESSION_NAME', 'restricted_area_session');
 
+//Choose the modules you would like to use.
+$MODULES = array(array( name => 'file_list', label => 'Files'));
+
 $LOGINS = array(
   //create new hashes with create_hash.php and paste the hash in here
   //example user:user1 password: password

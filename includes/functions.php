@@ -1,5 +1,5 @@
 <?php
-require_once('includes/pw.php');
+require_once 'pw.php';
 
 function createSessionHash($hash){
   $userBrowser = htmlspecialchars($_SERVER['HTTP_USER_AGENT']);

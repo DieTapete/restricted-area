@@ -1,13 +1,13 @@
 <?php
-require_once('config.php');
-require_once('includes/functions.php');
+define(MAIN_DIRECTORY, '../../');
+require_once MAIN_DIRECTORY.'config.php';
+require_once MAIN_DIRECTORY.'includes/functions.php';
 
 secureSessionStart();
-
 if (authorized()) {
   $currentUser = strip_tags($_SESSION['user']);
   //build path to download files
-  $downloadPath = DOWNLOAD_DIRECTORY;
+  $downloadPath = MAIN_DIRECTORY.DOWNLOAD_DIRECTORY;
   if (substr($downloadPath, -1) != '/'){
       $downloadPath = $downloadPath.'/';
   }
