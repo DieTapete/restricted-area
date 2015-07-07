@@ -50,4 +50,5 @@ The download script `download.php` first checks if the user is authorized. Then 
 
 ## Release History
 
+* 0.2.0 Added modules system
 * 0.1.0 Initial release
